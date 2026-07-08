@@ -1,14 +1,17 @@
 {
-  "theme": "base",
-  "themeVariables": {
-    "primaryColor": "#2563eb",
-    "primaryBorderColor": "#1d4ed8",
-    "primaryTextColor": "#ffffff",
-    "lineColor": "#64748b",
-    "secondaryColor": "#f8fafc",
-    "tertiaryColor": "#ffffff",
-    "background": "#ffffff",
-    "fontFamily": "Inter, Arial",
-    "fontSize": "16px"
-  }
+    "theme": "base",
+    "themeVariables": {
+        "primaryColor": "#2563eb",
+        "primaryBorderColor": "#1d4ed8",
+        "primaryTextColor": "#ffffff",
+        "secondaryColor": "#f8fafc",
+        "tertiaryColor": "#ffffff",
+        "lineColor": "#475569",
+        "fontFamily": "Inter, Arial",
+        "fontSize": "16px",
+        "background": "#ffffff",
+        "clusterBkg": "#eff6ff",
+        "clusterBorder": "#2563eb",
+        "edgeLabelBackground": "#ffffff"
+    }
 }
