@@ -24,14 +24,34 @@
 
 
 
+# from redis_lock import RedisLock
+# import time
+
+# lock = RedisLock("inventory_lock")
+
+# if lock.acquire():
+#     print("Lock acquired successfully!")
+#     print("Sleeping for 20 seconds...")
+#     time.sleep(20)
+# else:
+#     print("Failed to acquire lock.")
+
+
+
+
 from redis_lock import RedisLock
 import time
 
 lock = RedisLock("inventory_lock")
 
 if lock.acquire():
-    print("Lock acquired successfully!")
-    print("Sleeping for 20 seconds...")
-    time.sleep(20)
+    print("Lock acquired!")
+
+    time.sleep(5)
+
+    if lock.release():
+        print("Lock released!")
+    else:
+        print("Failed to release lock.")
 else:
-    print("Failed to acquire lock.")
+    print("Could not acquire lock.")

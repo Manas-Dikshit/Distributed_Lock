@@ -17,3 +17,15 @@ class RedisLock:
             px=self.timeout  # Expire after timeout (ms)
         )
         return acquired is True
+
+    def release(self):
+        # Lua script ensures atomic check-and-delete
+        release_script = """
+        if redis.call("get", KEYS[1]) == ARGV[1] then
+            return redis.call("del", KEYS[1])
+        else
+            return 0
+        end
+        """
+        result = self.redis.eval(release_script, 1, self.lock_name, self.owner_id)
+        return result == 1
